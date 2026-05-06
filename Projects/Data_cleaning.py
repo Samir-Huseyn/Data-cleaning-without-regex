@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("my_file (1).csv", sep=None, engine="python")
 print(df.info())
 print(df.shape)
-print(df.describe)
+print(df.describe())
 df.columns = ["rank", "peak", "all time peak", "actual gross", "adjusted gross", "artist", "tour title","year", "shows", "average gross", "ref"]
 print(df.columns.to_list())
 df["actual gross"] = df["actual gross"].str.replace("$", "", regex=False).str.replace(",", "", regex=False).str.replace("[b]", "", regex=False).str.replace("[e]", "", regex=False).astype(float)
